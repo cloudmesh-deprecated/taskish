@@ -150,7 +150,7 @@ class Job(api.Job):
                          ('task', 'BLOB')],
                          primary_keys=['id'],
                          auto_keys=['id'],
-                         indices=['id'])
+                         indices=['id', 'status', 'location', 'created', 'modified'])
 
     def __init__(self, **kws):
         self._id = kws.get('id', None)
