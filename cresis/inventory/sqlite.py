@@ -241,7 +241,7 @@ class Inventory(api.Inventory):
     def query_status(self, status, limit=None, fetchsize=10000):
         stmt = dedent("""\
         SELECT id FROM {table} WHERE status=:status\
-        """.format(table=Job.__table__.name))
+        """.format(table=Job.__table__.name)).strip()
 
         if limit > 0:
             stmt = "{select} LIMIT {limit}".format(select=stmt,
